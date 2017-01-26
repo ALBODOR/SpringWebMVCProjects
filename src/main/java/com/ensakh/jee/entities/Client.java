@@ -1,8 +1,16 @@
 package com.ensakh.jee.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  * Entity implementation class for Entity: Client
@@ -19,6 +27,7 @@ public class Client implements Serializable {
 	private String prenom;
 	private String adresse;
 	private String telephone;
+	private List<Commande> commandes;
 	
 	public Client() {
 		super();
@@ -41,6 +50,7 @@ public class Client implements Serializable {
 		this.id = id;
 	}
 
+	@Column(nullable = false)
 	public String getNom() {
 		return nom;
 	}
@@ -49,6 +59,7 @@ public class Client implements Serializable {
 		this.nom = nom;
 	}
 
+	@Column(nullable = false)
 	public String getPrenom() {
 		return prenom;
 	}
@@ -57,6 +68,7 @@ public class Client implements Serializable {
 		this.prenom = prenom;
 	}
 
+	@Column(nullable = false)
 	public String getAdresse() {
 		return adresse;
 	}
@@ -65,12 +77,22 @@ public class Client implements Serializable {
 		this.adresse = adresse;
 	}
 
+	@Column(nullable = false)
 	public String getTelephone() {
 		return telephone;
 	}
 
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
+	}
+
+	@OneToMany(mappedBy = "client", fetch = FetchType.EAGER, orphanRemoval = true)
+	public List<Commande> getCommandes() {
+		return commandes;
+	}
+
+	public void setCommandes(List<Commande> commandes) {
+		this.commandes = commandes;
 	}
    
 }

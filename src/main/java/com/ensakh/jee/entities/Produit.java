@@ -1,11 +1,17 @@
 package com.ensakh.jee.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
@@ -22,6 +28,7 @@ public class Produit implements Serializable {
 	private String nomProduit;
 	private Integer quantite;
 	private Double prix;
+	private List<Commande> commandes;
 
 	public Produit() {
 		super();
@@ -43,6 +50,7 @@ public class Produit implements Serializable {
 		this.id = id;
 	}
 
+	@Column(nullable = false)
 	public String getNomProduit() {
 		return nomProduit;
 	}
@@ -51,6 +59,7 @@ public class Produit implements Serializable {
 		this.nomProduit = nomProduit;
 	}
 
+	@Column(nullable = false)
 	public Integer getQuantite() {
 		return quantite;
 	}
@@ -59,12 +68,25 @@ public class Produit implements Serializable {
 		this.quantite = quantite;
 	}
 
+	@Column(nullable = false)
 	public Double getPrix() {
 		return prix;
 	}
 
 	public void setPrix(Double prix) {
 		this.prix = prix;
+	}
+
+	@ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(	name = "COMMANDE_PRODUIT", 
+    			joinColumns = @JoinColumn(name = "COMMANDE_ID"), 
+    			inverseJoinColumns = @JoinColumn(name = "PRODUIT_ID"))
+	public List<Commande> getCommandes() {
+		return commandes;
+	}
+
+	public void setCommandes(List<Commande> commandes) {
+		this.commandes = commandes;
 	}
    
 }
