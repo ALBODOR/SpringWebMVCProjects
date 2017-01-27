@@ -5,8 +5,11 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.stereotype.Component;
+
 import com.ensakh.jee.entities.Commande;
 
+@Component
 public class CommandeDAO implements DAO<Commande>{
 
 	@PersistenceContext(unitName = "GestionCommandesPU")

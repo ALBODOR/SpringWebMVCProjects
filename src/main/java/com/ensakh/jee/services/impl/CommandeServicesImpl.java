@@ -2,6 +2,7 @@ package com.ensakh.jee.services.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ensakh.jee.entities.Commande;
@@ -11,7 +12,8 @@ import com.ensakh.jee.services.CommandeServices;
 @Service
 public class CommandeServicesImpl implements CommandeServices {
 
-	CommandeDAO commandeDAO;
+	@Autowired
+	private CommandeDAO commandeDAO;
 	
 	public CommandeServicesImpl() {
 		commandeDAO = new CommandeDAO();
