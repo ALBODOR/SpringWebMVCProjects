@@ -9,7 +9,6 @@
 		<link type="text/css" rel="stylesheet" href="inc/css/bootstrap.min.css"/>
 	</head>
 	<body>	
-		<c:import url="/inc/menu.jsp" />	
 		<div class="container spacer">
 			<table class="table table-striped">
 				<head>
@@ -27,9 +26,6 @@
 						<td><c:out value="${ commandes.value.numeroCommande }"/></td>
 						<td><c:out value="${ commandes.value.dateCommande }"/></td>
 						<td><c:out value="${ commandes.value.client.nom }"/></td>
-						<%-- Lien vers la servlet de suppression, avec
-						passage du nom du client - c'est-Ã -dire la clÃ© de la Map - en
-						paramÃ¨tre grÃ¢ce Ã  la balise <c:param/>. --%>
 						<td>
 							<a onclick="return confirm('êtes vous sûr de vouloir supprimer?')" href="<c:url value="/suppressionCommande"><c:param name="code" value="${commandes.value.numeroCommande}" /></c:url>">
 							<img class="spacer_sup" src="<c:url value="/inc/supprimer.png"/>" alt="Supprimer" />

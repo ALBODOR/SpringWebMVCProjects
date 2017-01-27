@@ -8,13 +8,12 @@
     <meta name="author" content="ELOUIZ Badr; LOGDALI Souhail">
 
     <title>Projet Spring JSP</title>
-    <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapMinCSS" />
-	<spring:url value="/resources/css/sb-admin.css" var="sbAdminCSS" />
-	<spring:url value="/resources/font-awesome/css/font-awesome.min.css" var="fontAwesomeCSS" />
-	
-	<link href="${bootstrapMinCSS}" rel="stylesheet" type="text/css" />
-	<link href="${sbAdminCSS}" rel="stylesheet" type="text/css" />
-	<link href="${fontAwesomeCSS}" rel="stylesheet" type="text/css" />
+    
+    			
+	<link href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" rel="stylesheet" /> 
+	<link href="${pageContext.request.contextPath}/resources/css/sb-admin.css" rel="stylesheet"  />
+	<link href="${pageContext.request.contextPath}/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="${pageContext.request.contextPath}/resources/css/login.css" rel="stylesheet" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

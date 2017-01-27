@@ -1,18 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 	<!-- Include Header -->
 	<jsp:include page="../fragments/header.jsp"></jsp:include>
 	
 	<!-- Page Content -->
-	<html lang="fr">
-		<head>
-			<meta charset="UTF-8">
-			<title>Projet Spring JSP</title> 
-			<spring:url value="/resources/css/login.css" var="loginCSS" /> 
-			<link rel="stylesheet" type="text/css" href="${loginCSS}" /> 
-		</head>
-		
-		<body>
 			<hgroup>
 				<h1>Authentification</h1>
 			</hgroup>
@@ -33,14 +23,6 @@
 				</button>
 			</form>
 			
-			<spring:url value="/resources/js/jquery-3.1.1.min.js" var="jqueryJS" /> 
-			<spring:url value="/resources/js/login.js" var="loginJS" /> 
-			<script src="${loginJS}" type="text/javascript"></script>
-			<script src="${jqueryJS}" type="text/javascript"></script>
-		</body>
-		</html>
-			
-	
 	<!-- Include Footer -->
 	<jsp:include page="../fragments/footer.jsp"></jsp:include>
 	

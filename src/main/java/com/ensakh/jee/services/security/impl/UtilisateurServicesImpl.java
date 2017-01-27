@@ -1,8 +1,11 @@
 package com.ensakh.jee.services.security.impl;
 
+import org.springframework.stereotype.Service;
+
 import com.ensakh.jee.entities.security.Utilisateur;
 import com.ensakh.jee.services.security.UtilisateurServices;
 
+@Service
 public class UtilisateurServicesImpl implements UtilisateurServices {
 
 	@Override

@@ -6,8 +6,9 @@
 	    </div><!-- /#wrapper -->
 	
 	    <!-- Bootstrap Core JavaScript -->
-    	<spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJS" />
-	    <script src="${bootstrapJS}"></script>
+	    <script src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="${pageContext.request.contextPath}/resources/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+		<script src="${pageContext.request.contextPath}/resources/js/login.js" type="text/javascript"></script>
 	
 	</body>
 </html>

@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.ensakh.jee.entities.Client;
 import com.ensakh.jee.services.CommandeServices;
 
 @Controller
