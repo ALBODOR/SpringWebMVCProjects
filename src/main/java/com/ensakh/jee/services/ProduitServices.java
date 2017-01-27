@@ -2,8 +2,11 @@ package com.ensakh.jee.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.ensakh.jee.entities.Produit;
 
+@Service
 public interface ProduitServices {
 
 	void creerProduit(Produit fact);

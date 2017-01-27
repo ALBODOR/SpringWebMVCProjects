@@ -2,9 +2,12 @@ package com.ensakh.jee.services.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.ensakh.jee.entities.Facture;
 import com.ensakh.jee.services.FactureServices;
 
+@Service
 public class FactureServicesImpl implements FactureServices {
 
 	@Override

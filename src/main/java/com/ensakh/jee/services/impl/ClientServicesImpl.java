@@ -2,9 +2,12 @@ package com.ensakh.jee.services.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.ensakh.jee.entities.Client;
 import com.ensakh.jee.services.ClientServices;
 
+@Service
 public class ClientServicesImpl implements ClientServices {
 
 	@Override

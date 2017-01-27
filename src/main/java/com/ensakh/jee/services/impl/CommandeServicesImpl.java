@@ -2,39 +2,44 @@ package com.ensakh.jee.services.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.ensakh.jee.entities.Commande;
+import com.ensakh.jee.persistence.CommandeDAO;
 import com.ensakh.jee.services.CommandeServices;
 
+@Service
 public class CommandeServicesImpl implements CommandeServices {
 
+	CommandeDAO commandeDAO;
+	
+	public CommandeServicesImpl() {
+		commandeDAO = new CommandeDAO();
+	}
+	
 	@Override
 	public void creerCommande(Commande cmd) {
-		// TODO Auto-generated method stub
-
+		commandeDAO.persist(cmd);
 	}
 
 	@Override
 	public void supprimerCommande(Long id) {
-		// TODO Auto-generated method stub
-
+		commandeDAO.remove(id);
 	}
 
 	@Override
 	public void modifierLivraison(Commande cmd) {
-		// TODO Auto-generated method stub
-
+		commandeDAO.persist(cmd);
 	}
 
 	@Override
 	public Commande chercherCommande(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return commandeDAO.find(id);
 	}
 
 	@Override
 	public List<Commande> toutesLesCommandes() {
-		// TODO Auto-generated method stub
-		return null;
+		return commandeDAO.findAll();
 	}
 
 }

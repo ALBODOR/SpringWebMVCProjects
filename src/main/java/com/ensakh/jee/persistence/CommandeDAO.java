@@ -2,32 +2,34 @@ package com.ensakh.jee.persistence;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import com.ensakh.jee.entities.Commande;
 
 public class CommandeDAO implements DAO<Commande>{
 
+	@PersistenceContext(unitName = "GestionCommandesPU")
+	private EntityManager em;
+	
 	@Override
 	public void persist(Commande entity) {
-		// TODO Auto-generated method stub
-		
+		em.persist(entity);
 	}
 
 	@Override
 	public void remove(Long id) {
-		// TODO Auto-generated method stub
-		
+		em.remove(em.find(Commande.class, id));		
 	}
 
 	@Override
 	public Commande find(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.find(Commande.class, id);
 	}
 
 	@Override
 	public List<Commande> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return em.createNamedQuery("Commande.findById", Commande.class).getResultList();
 	}
 
 }
