@@ -14,6 +14,10 @@ public class CommandeDAO implements DAO<Commande>{
 
 	@PersistenceContext(unitName = "GestionCommandesPU")
 	private EntityManager em;
+
+        public CommandeDAO() {
+
+        }
 	
 	@Override
 	public void persist(Commande entity) {

@@ -14,7 +14,11 @@ public class ProduitServicesImpl implements ProduitServices {
 
 	@Autowired
 	private ProduitDAO produitDao;
-	
+
+        public ProduitServicesImpl() {
+
+        }
+        
 	@Override
 	public void creerProduit(Produit fact) {
 		// TODO Auto-generated method stub

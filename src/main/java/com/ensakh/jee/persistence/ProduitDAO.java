@@ -14,6 +14,10 @@ public class ProduitDAO implements DAO<Produit> {
 
 	@PersistenceContext
 	private EntityManager em;
+
+        public ProduitDAO() {
+            
+        }
 	
 	@Override
 	public void persist(Produit entity) {

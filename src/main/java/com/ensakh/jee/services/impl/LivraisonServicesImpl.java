@@ -14,7 +14,11 @@ public class LivraisonServicesImpl implements LivraisonServices {
 
 	@Autowired
 	private LivraisonDAO livraisonDao;
-	
+
+        public LivraisonServicesImpl() {
+
+        }
+        
 	@Override
 	public void creerLivraison(Livraison liv) {
 		// TODO Auto-generated method stub

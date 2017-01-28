@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.1"
-   xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-   <persistence-unit name="GestionCommandesPU" transaction-type="JTA">
-      <jta-data-source>java:jboss/datasources/gestion-commandes-javaee-webappDS</jta-data-source>
-      <properties>
-         <!-- Properties for Hibernate -->
-         <property name="hibernate.hbm2ddl.auto" value="create-drop" />
-         <property name="hibernate.show_sql" value="true" />
-         <property name="hibernate.format_sql" value="true" />
-      </properties>
-   </persistence-unit>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="GestionCommandesPU" transaction-type="JTA">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <jta-data-source>java:/GestionCommandesDS</jta-data-source>
+    <class>com.ensakh.jee.entities.Client</class>
+    <class>com.ensakh.jee.entities.Facture</class>
+    <class>com.ensakh.jee.entities.Livraison</class>
+    <class>com.ensakh.jee.entities.Produit</class>
+    <class>com.ensakh.jee.entities.Commande</class>
+    <class>com.ensakh.jee.entities.security.Utilisateur</class>
+    <class>com.ensakh.jee.entities.security.Role</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+      <!-- Properties for Hibernate -->
+        <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+        <property name="hibernate.show_sql" value="true"/>
+        <property name="hibernate.format_sql" value="true"/>
+    </properties>
+  </persistence-unit>
 </persistence>

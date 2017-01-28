@@ -10,10 +10,13 @@ import com.ensakh.jee.services.security.UtilisateurServices;
 @Service
 public class UtilisateurServicesImpl implements UtilisateurServices {
 
-
 	@Autowired
 	private UtilisateurDAO utilisateurDao;
 	
+        public UtilisateurServicesImpl() {
+
+        }
+        
 	@Override
 	public Utilisateur seConnecter(String login, String pass) {
 		// TODO Auto-generated method stub

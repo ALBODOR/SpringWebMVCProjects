@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * Entity implementation class for Entity: Livraison
@@ -40,6 +42,7 @@ public class Livraison implements Serializable {
 		this.id = id;
 	}
 
+        @Temporal(TemporalType.TIMESTAMP)
 	public Date getDateLivraison() {
 		return dateLivraison;
 	}

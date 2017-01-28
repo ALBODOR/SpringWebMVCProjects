@@ -3,46 +3,47 @@ package com.ensakh.jee.services.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import com.ensakh.jee.entities.Client;
 import com.ensakh.jee.persistence.ClientDAO;
 import com.ensakh.jee.services.ClientServices;
+import javax.naming.InitialContext;
+import javax.transaction.UserTransaction;
+import org.springframework.stereotype.Component;
 
-@Service
+@Component
 public class ClientServicesImpl implements ClientServices {
 	
 	@Autowired
 	private ClientDAO clientDao;
 
-	@Override
-	public void creerClient(Client cli) {
-		// TODO Auto-generated method stub
+        public ClientServicesImpl() {
 
+        }
+
+	@Override
+	public void creerClient(Client cli) throws Exception {
+            clientDao.persist(cli);
 	}
 
 	@Override
-	public void supprimerClient(Long id) {
-		// TODO Auto-generated method stub
-
+	public void supprimerClient(Long id) throws Exception {
+		clientDao.remove(id);
 	}
 
 	@Override
-	public void modifierClient(Client cli) {
-		// TODO Auto-generated method stub
-
+	public void modifierClient(Client cli) throws Exception {
+		clientDao.persist(cli);
 	}
 
 	@Override
-	public Client chercherCommande(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Client chercherCommande(Long id) throws Exception {
+		return clientDao.find(id);
 	}
 
 	@Override
-	public List<Client> tousLesClients() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Client> tousLesClients() throws Exception {
+		return clientDao.findAll();
 	}
 
 }

@@ -15,6 +15,10 @@ public class UtilisateurDAO implements DAO<Utilisateur> {
 	
 	@PersistenceContext
 	private EntityManager em;
+
+        public UtilisateurDAO() {
+            
+        }
 	
 	@Override
 	public void persist(Utilisateur entity) {

@@ -15,9 +15,9 @@ public class CommandeServicesImpl implements CommandeServices {
 	@Autowired
 	private CommandeDAO commandeDAO;
 	
-	public CommandeServicesImpl() {
-		commandeDAO = new CommandeDAO();
-	}
+        public CommandeServicesImpl() {
+
+        }
 	
 	@Override
 	public void creerCommande(Commande cmd) {

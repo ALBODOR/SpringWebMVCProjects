@@ -15,7 +15,11 @@ public class RoleDAO implements DAO<Role> {
 
 	@PersistenceContext
 	private EntityManager em;
-	
+
+        public RoleDAO() {
+            
+        }
+
 	@Override
 	public void persist(Role entity) {
 		// TODO Auto-generated method stub

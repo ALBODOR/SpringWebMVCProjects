@@ -5,12 +5,12 @@ import java.util.List;
 
 public interface DAO<E> {
 	
-	void persist(E entity);
+	void persist(E entity) throws Exception;
 	
-	void remove(Long id);
+	void remove(Long id) throws Exception;
 	
-	E find(Long id);
+	E find(Long id) throws Exception;
 	
-	List<E> findAll();
+	List<E> findAll() throws Exception;
 	
 }

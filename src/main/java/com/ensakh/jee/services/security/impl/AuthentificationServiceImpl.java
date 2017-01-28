@@ -7,4 +7,8 @@ import com.ensakh.jee.services.security.AuthentificationService;
 @Service
 public class AuthentificationServiceImpl implements AuthentificationService{
 
+    public AuthentificationServiceImpl() {
+        
+    }
+
 }

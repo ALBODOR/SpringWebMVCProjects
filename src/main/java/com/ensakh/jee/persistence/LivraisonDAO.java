@@ -14,6 +14,10 @@ public class LivraisonDAO implements DAO<Livraison>{
 
 	@PersistenceContext
 	private EntityManager em;
+
+        public LivraisonDAO() {
+            
+        }
 	
 	@Override
 	public void persist(Livraison entity) {

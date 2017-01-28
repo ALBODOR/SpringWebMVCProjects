@@ -14,6 +14,10 @@ public class FactureDAO implements DAO<Facture>{
 	
 	@PersistenceContext
 	private EntityManager em;
+
+        public FactureDAO() {
+            
+        }
 	
 	@Override
 	public void persist(Facture entity) {

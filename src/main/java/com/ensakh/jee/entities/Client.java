@@ -9,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -18,15 +19,23 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="CLIENTS")
+@NamedQuery(name = "Client.findAll", query = "SELECT c FROM Client c")
 public class Client implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	@Column(nullable = false)
 	private String nom;
+	@Column(nullable = false)
 	private String prenom;
+	@Column(nullable = false)
 	private String adresse;
+	@Column(nullable = false)
 	private String telephone;
+	@OneToMany(mappedBy = "client", fetch = FetchType.EAGER, orphanRemoval = true)
 	private List<Commande> commandes;
 	
 	public Client() {
@@ -41,7 +50,6 @@ public class Client implements Serializable {
 		this.telephone = telephone;
 	}
 
-	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	public long getId() {
 		return id;
 	}
@@ -50,7 +58,6 @@ public class Client implements Serializable {
 		this.id = id;
 	}
 
-	@Column(nullable = false)
 	public String getNom() {
 		return nom;
 	}
@@ -59,7 +66,6 @@ public class Client implements Serializable {
 		this.nom = nom;
 	}
 
-	@Column(nullable = false)
 	public String getPrenom() {
 		return prenom;
 	}
@@ -68,7 +74,6 @@ public class Client implements Serializable {
 		this.prenom = prenom;
 	}
 
-	@Column(nullable = false)
 	public String getAdresse() {
 		return adresse;
 	}
@@ -77,7 +82,6 @@ public class Client implements Serializable {
 		this.adresse = adresse;
 	}
 
-	@Column(nullable = false)
 	public String getTelephone() {
 		return telephone;
 	}
@@ -86,7 +90,6 @@ public class Client implements Serializable {
 		this.telephone = telephone;
 	}
 
-	@OneToMany(mappedBy = "client", fetch = FetchType.EAGER, orphanRemoval = true)
 	public List<Commande> getCommandes() {
 		return commandes;
 	}

@@ -14,7 +14,11 @@ public class FactureServicesImpl implements FactureServices {
 
 	@Autowired
 	private FactureDAO factureDao;
-	
+
+        public FactureServicesImpl() {
+
+        }
+        
 	@Override
 	public void creerFacture(Facture fact) {
 		// TODO Auto-generated method stub
